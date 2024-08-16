@@ -51,17 +51,66 @@
     text-align: center;
 }
 
-/* Remove Swipe Indicator Styles */
-.swipe-indicator {
-    /* Commented out or removed as not needed */
-    /* position: absolute;
-    top: 16px;
+/* Swipe Animations */
+.swipe-card.swiped-left {
+    animation: swipeLeft 0.5s forwards;
+}
+
+.swipe-card.swiped-right {
+    animation: swipeRight 0.5s forwards;
+}
+
+/* Heart Icon */
+.swipe-card-icon {
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center; */
+    transform: translate(-50%, -50%);
+    font-size: 3rem; /* Adjust size as needed */
+    z-index: 10; /* Ensure it is above other elements */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.swipe-card-icon.show {
+    opacity: 1;
+}
+
+.swipe-card-icon.heart {
+    color: red;
+}
+
+.swipe-card-icon.dislike {
+    color: #888; /* Gray color for dislike */
+}
+
+/* Swipe Animations */
+.swipe-card.swiped-left {
+    animation: swipeLeft 0.5s forwards;
+}
+
+.swipe-card.swiped-right {
+    animation: swipeRight 0.5s forwards;
+}
+
+@keyframes swipeLeft {
+    from {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100vw) scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes swipeRight {
+    from {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100vw) scale(0.8);
+        opacity: 0;
+    }
 }

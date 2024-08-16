@@ -18,6 +18,20 @@ body {
     padding: 0 1rem;
 }
 
+/* Center loading content */
+.loading-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;           /* Full viewport height */
+    width: 100vw;            /* Full viewport width */
+}
+
+.loading-message {
+    font-size: 1.5rem;
+    color: #333;            /* Adjust color as needed */
+}
+
 /* Responsive Design */
 @media (min-width: 768px) {
     .container {
